@@ -6,9 +6,14 @@ public class GameDirector : MonoBehaviour
 {
     private bool isGameOver;
 
+    public GameObject player;
+    public FinalScoreUI finalS;
+
     private void Start()
     {
         isGameOver = false;
+        player = GameObject.Find("player");
+        finalS = GameObject.Find("FinalScore").GetComponent<FinalScoreUI>();
     }
 
     private void Update()
@@ -23,6 +28,7 @@ public class GameDirector : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        // 게임 종료 처리 해야하는데,,,
+        player.SetActive(false);
+        finalS.ViewFinalScore();
     }
 }

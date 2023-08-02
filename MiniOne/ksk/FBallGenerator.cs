@@ -17,7 +17,7 @@ public class FBallGenerator : MonoBehaviour
             this.delta = 0;
             GameObject go = Instantiate(FBallPrefab); //화살 생성
             int px = Random.Range(-6, 7); //화살의 x 위치를 랜덤하게
-            go.transform.position = new Vector3(px, 9, 0);
+            go.transform.position = new Vector3(px, 9.5f, 0);
         }
 
     }
