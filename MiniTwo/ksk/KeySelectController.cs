@@ -10,8 +10,11 @@ public class KeySelectController : MonoBehaviour
     public float rowSpacing = 1.3f; // 행 간의 간격
     public float columnSpacing = 1.3f; // 열 간의 간격
 
+    public GameObject[] keys; // 키 오브젝트 저장 배열
+
     private void Start()
     {
+        keys = new GameObject[15]; // 키 오브젝트 배열 초기화
         PlaceKeys();
     }
 
@@ -30,7 +33,15 @@ public class KeySelectController : MonoBehaviour
                 //Quaternion.identity -> 오브젝트가 회전하지 않고 고정되도록 넣는 값
                 keyObject.transform.SetParent(transform);
 
+                keys[(row*5)+column] = keyObject;
+
                 // 키에 대한 추가 설정 (키에 문자 정보 전달 등)
+
+                // 플레이어가 이동하는 방향
+                // 1차원 15짜리 배열 2개 ->
+                // 1번째 배열 - 랜덤으로 생성한 키 프리팹들의 인덱스 저장
+                // (보류) 2번째 배열 - 저장된 인덱스에 대해서 움직이는 방향? 정보 저장
+                // 
             }
         }
     }
