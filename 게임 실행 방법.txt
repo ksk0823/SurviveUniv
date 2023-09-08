@@ -1,0 +1,4 @@
+게임 실행 방법
+1. BuildFile.zip 파일의 압축을 한 폴더 안에 푼다.
+(혹은 BuildFile 폴더를 전부 내려받기)
+2. 폴더 내의 "SurviveUniv" 파일을 실행한다.
