@@ -1,5 +1,7 @@
 # SurviveUniv
 
+OS: Windows
+
 1. Assets
    
    유니티 프로젝트 안에 있던 Asset 폴더 파일입니다.
