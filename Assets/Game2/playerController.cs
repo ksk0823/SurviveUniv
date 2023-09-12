@@ -41,35 +41,37 @@ public class playerController : MonoBehaviour
             check(4);
         }
 
-        //입력 체크 메소드
+        //???? ???? ??????
         void check(int i)
         {
-            //배열 개수를 다 채우면 return 
+            //???? ?????? ?? ?????? return 
             if (nowIndex >= 15)
             {
                 if(i == 4)
                 {
                     slCont.GetComponent<SliderController>().OnClickButtonS();
+                    Correct.SoundPlay();
                 }
                 else
                 {
-                    //키를 잘못 입력 했을 때 시간이 깎임
+                    //???? ???? ???? ???? ?? ?????? ????
                     TimerTwo timeBar = GameObject.Find("Timer").GetComponent<TimerTwo>();
-                    timeBar.currentTime -= 5f; // 5초 감소
-                    timeBar.UpdateTimeBar();   // 시간바 업데이트
+                    timeBar.currentTime -= 5f; // 5?? ????
+                    timeBar.UpdateTimeBar();   // ?????? ????????
                     return;
                 }
             }
-            else  //15개 다 못 채웠을 때
+            else  //15?? ?? ?? ?????? ??
             {
-                // key index랑 i랑 비교
+                // key index?? i?? ????
                 if (keyIndex.keyIndex[nowIndex] == i)
                 {
                     Vector3 pos = keyIndex.keys[nowIndex].transform.position;
                     transform.position = pos;
                     keyIndex.keys[nowIndex].SetActive(false);
+                    Correct.SoundPlay();
 
-                    //15개 다 못채웠을 때만 증가
+                    //15?? ?? ???????? ???? ????
                     if (nowIndex < 15)
                     {
                         nowIndex++;
@@ -77,10 +79,11 @@ public class playerController : MonoBehaviour
                 }
                 else
                 {
-                    //키를 잘못 입력 했을 때 시간이 깎임
+                    //???? ???? ???? ???? ?? ?????? ????
                     TimerTwo timeBar = GameObject.Find("Timer").GetComponent<TimerTwo>();
-                    timeBar.currentTime -= 5f; // 5초 감소
-                    timeBar.UpdateTimeBar();   // 시간바 업데이트
+                    timeBar.currentTime -= 5f; // 5?? ????
+                    timeBar.UpdateTimeBar();   // ?????? ????????
+                    Wrong.SoundPlay();
                 }
             }
 

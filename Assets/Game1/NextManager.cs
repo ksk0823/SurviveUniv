@@ -11,15 +11,19 @@ public class NextManager : MonoBehaviour
 
     private ScoreManager scoreManager;
 
+    public AudioSource clickSfx;
+
     // Start is called before the first frame update
     void Start()
     {
         nextButton = GameObject.Find("Next").GetComponent<Button>();
+        clickSfx = GameObject.Find("ClickSfx").GetComponent<AudioSource>();
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     public void NextGame()
     {
+        clickSfx.Play();
 
         float fn = 0f;
         fn = (float)(scoreManager.Score / scoreManager.Num);

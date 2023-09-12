@@ -12,6 +12,7 @@ public class APlusController : MonoBehaviour
     {
 
         score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        
         rb = GetComponent<Rigidbody2D>();
     }
 

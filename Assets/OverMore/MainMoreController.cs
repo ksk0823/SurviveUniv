@@ -9,15 +9,19 @@ public class MainMoreController : MonoBehaviour
 {
     public Button nextButton;
 
+    public AudioSource clickSfx;
+
+
     // Start is called before the first frame update
     void Start()
     {
         nextButton = GameObject.Find("Main").GetComponent<Button>();
+        clickSfx = GameObject.Find("ClickSfx").GetComponent<AudioSource>();
     }
 
     public void NextGame()
     {
-
+        clickSfx.Play();
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
         //
     }

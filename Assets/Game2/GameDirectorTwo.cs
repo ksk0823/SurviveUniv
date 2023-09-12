@@ -34,6 +34,8 @@ public class GameDirectorTwo : MonoBehaviour
             Time.timeScale = 0f;
             AudioSource bgm = GameObject.Find("BGM").GetComponent<AudioSource>();
             bgm.Stop();
+            AudioSource clockbgm = GameObject.Find("clockSFX").GetComponent<AudioSource>();
+            clockbgm.Stop();
         }
     }
 

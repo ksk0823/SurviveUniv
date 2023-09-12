@@ -12,16 +12,34 @@ public class NextButtonControllerGTwo : MonoBehaviour
 
     private ScoreController finalScore;
 
+    public AudioSource buttonSFX;
+
     // Start is called before the first frame update
     void Start()
     {
         nextButton = GameObject.Find("Next").GetComponent<Button>();
         finalScore  = GameObject.Find("Score").GetComponent<ScoreController>();
+        buttonSFX = GameObject.Find("ButtonSFX").GetComponent<AudioSource>();
+    }
+
+    public void ButtonClick()
+    {
+        playSFX();
+
+        //Invoke("ShowResult", 0.3f);
+        ShowResult();
+
+    }
+
+    public void playSFX()
+    {
+        buttonSFX.Play();
     }
 
     public void ShowResult()
     {
         int score = finalScore.score;
+        
 
         if (score >= 80)
         {

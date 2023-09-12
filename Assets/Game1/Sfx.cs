@@ -11,7 +11,7 @@ public class Sfx : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioClip = Resources.Load<AudioClip>("Coin4");
+        audioClip = Resources.Load<AudioClip>("Collect_Point_01");
     }
 
     public static void SoundPlay()

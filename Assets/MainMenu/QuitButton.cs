@@ -13,15 +13,21 @@ public class QuitButton : MonoBehaviour, IPointerClickHandler
 
     public Sprite[] spr;
 
+    public AudioSource clickSFX;
+    public AudioSource hoverSFX;
+
     // Start is called before the first frame update
     void Start()
     {
         nowImg = GetComponent<Image>();
+        clickSFX = GameObject.FindWithTag("mainClickSfx").GetComponent<AudioSource>();
+        hoverSFX = GameObject.FindWithTag("mainHoverSfx").GetComponent<AudioSource>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Enter");
+        hoverSFX.Play();
         nowImg.sprite = spr[1];
     }
 
@@ -33,6 +39,7 @@ public class QuitButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Quit");
+        clickSFX.Play();
         Application.Quit();
     }
 }

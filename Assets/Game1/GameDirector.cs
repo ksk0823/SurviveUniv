@@ -10,11 +10,14 @@ public class GameDirector : MonoBehaviour
     public FinalScoreUI finalS;
     public GameObject nt;
 
+    public AudioSource BGM;
+
     private void Start()
     {
         isGameOver = false;
         //player = GameObject.Find("player");
         finalS = GameObject.Find("FinalScore").GetComponent<FinalScoreUI>();
+        BGM = GameObject.Find("BGM").GetComponent<AudioSource >();
         nt = GameObject.Find("Next");
         nt.SetActive(false);
     }
@@ -35,5 +38,7 @@ public class GameDirector : MonoBehaviour
         this.player.SetActive(false);
         finalS.ViewFinalScore();
         nt.SetActive(true);
+        BGM.Pause();
+
     }
 }
